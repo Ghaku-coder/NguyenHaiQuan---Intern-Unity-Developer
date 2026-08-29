@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 64543165}
   - component: {fileID: 64543164}
   - component: {fileID: 64543163}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1502,6 +1502,8 @@ MonoBehaviour:
   mission: {fileID: 1311181532}
   congratulation: {fileID: 744557466}
   BlastRainbow: {fileID: 1795340632}
+  missionShown: 0
+  congratulationShown: 0
 --- !u!64 &418052459
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2742,7 +2744,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692659081}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06727841, y: 0.025414538, z: -0.0017142912, w: 0.99740905}
+  m_LocalRotation: {x: 0.067277625, y: 0.025874153, z: -0.0017452943, w: 0.99739724}
   m_LocalPosition: {x: 0, y: 1.5035291, z: -4.7685847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3219,7 +3221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779496233}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Invisible Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3523,7 +3525,7 @@ GameObject:
   - component: {fileID: 916398445}
   - component: {fileID: 916398444}
   - component: {fileID: 916398443}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3876,7 +3878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.067278415, y: 0.025414538, z: -0.0017142915, w: 0.99740905}
+  m_LocalRotation: {x: 0.067277625, y: 0.025874149, z: -0.0017452942, w: 0.99739724}
   m_LocalPosition: {x: 0, y: 1.5035291, z: -4.7685847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4663,7 +4665,7 @@ GameObject:
   - component: {fileID: 1364630999}
   - component: {fileID: 1364630998}
   - component: {fileID: 1364630997}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6025,7 +6027,7 @@ GameObject:
   - component: {fileID: 1630390801}
   - component: {fileID: 1630390800}
   - component: {fileID: 1630390799}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

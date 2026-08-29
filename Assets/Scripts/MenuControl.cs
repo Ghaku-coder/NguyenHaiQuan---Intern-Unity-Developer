@@ -11,9 +11,10 @@ public class MenuControl : MonoBehaviour
     
     public void Play()
     {
+        background.SetActive(false);
+        
         if(uIManager.gameManager.score <= 0)
         {
-            background.SetActive(false);
             StartCoroutine(Intro());
         }
     }
