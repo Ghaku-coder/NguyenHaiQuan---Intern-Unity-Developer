@@ -2869,17 +2869,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d64afa1e56da2894c874d1fb8aa034cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  gem: {fileID: 0}
   areaCenter: {x: 0, y: 0, z: 0}
   areaSize: {x: 50, y: 0, z: 168}
-  spawnTime: 1
-  spawnQuality: 2
-  maxGems: 40
-  snapToGround: 1
+  RaycastHeightAbove: 50
+  RaycastMaxDistance: 100
   groundMask:
     serializedVersion: 2
+    m_Bits: 8
+  maxAttempsPerSpawn: 30
+  obstacleMask:
+    serializedVersion: 2
     m_Bits: 0
-  raycastHeight: 50
+  obstacleCheckRadius: 0.3
+  spawnHeightOffset: 0.3
+  maxSurfaceAngle: 60
+  minSurfaceAngle: -60
+  spawnInterval: 1
+  maxGemAlive: 15
+  gemPrefabs:
+  - {fileID: 471256903664379551, guid: 516a7adcb94760e4ea78e83b44fed96d, type: 3}
+  - {fileID: 8520051336910688623, guid: 16b9f109c34e4ef449ecfe3d334eaec0, type: 3}
 --- !u!4 &1459641276
 Transform:
   m_ObjectHideFlags: 0
@@ -3868,8 +3877,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b23bf40968f934c8cae4088dea4c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  gemPrefab: {fileID: 0}
-  poolSize: 30
+  gemTypes:
+  - prefab: {fileID: 471256903664379551, guid: 516a7adcb94760e4ea78e83b44fed96d, type: 3}
+    initialSize: 10
+  - prefab: {fileID: 8520051336910688623, guid: 16b9f109c34e4ef449ecfe3d334eaec0, type: 3}
+    initialSize: 10
 --- !u!4 &1623162983
 Transform:
   m_ObjectHideFlags: 0
@@ -4847,7 +4859,7 @@ GameObject:
   - component: {fileID: 1974030246}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

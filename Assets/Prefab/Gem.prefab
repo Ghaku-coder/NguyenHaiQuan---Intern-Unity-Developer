@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1bc38999e3735844aa7131d628d09e78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.43577
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1bc38999e3735844aa7131d628d09e78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1bc38999e3735844aa7131d628d09e78, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.42784
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1bc38999e3735844aa7131d628d09e78, type: 3}
       propertyPath: m_LocalRotation.w
@@ -55,5 +55,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1bc38999e3735844aa7131d628d09e78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6654109398791532286}
   m_SourcePrefab: {fileID: 100100000, guid: 1bc38999e3735844aa7131d628d09e78, type: 3}
+--- !u!1 &8107903271079193271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1bc38999e3735844aa7131d628d09e78, type: 3}
+  m_PrefabInstance: {fileID: 8954394936856942566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6654109398791532286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107903271079193271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13659f8ce004b14fb959c920b7108e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gem
+  gemValue: 1

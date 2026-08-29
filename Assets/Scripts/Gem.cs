@@ -12,6 +12,6 @@ public class Gem : MonoBehaviour
             //other.GetComponent<Player>()?.AddScore(gemValue);
         }
 
-        GemPool.Instance.ReturnGem(gameObject);
+        //GemPool.Instance.ReturnGem(gameObject);
     }
 }

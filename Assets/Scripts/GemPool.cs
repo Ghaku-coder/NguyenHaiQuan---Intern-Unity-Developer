@@ -4,49 +4,68 @@ using UnityEngine;
 
 public class GemPool : MonoBehaviour
 {
-    public static GemPool Instance {get; private set;}
+    public static GemPool Instance { get; private set; }
 
-    [Header("prefab va so luong khoi tao")]
-    public GameObject gemPrefab;
-    public int poolSize = 30;
+    [System.Serializable]
+    public class GemPoolEntry
+    {
+        public GameObject prefab;
+        public int initialSize = 20;
+    }
 
-    private Queue<GameObject> pool = new Queue<GameObject>();
+    [Header("Danh sách các loại gem")]
+    public List<GemPoolEntry> gemTypes;
+
+    private Dictionary<GameObject, Queue<GameObject>> poolDict = new Dictionary<GameObject, Queue<GameObject>>();
+
+    private Dictionary<GameObject, GameObject> instanceToPrefab = new Dictionary<GameObject, GameObject>();
 
     void Awake()
     {
-        if(Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
 
-        for(int i = 0; i < poolSize; i++)
+        foreach (var entry in gemTypes)
         {
-            GameObject gem = CreateNewGem();
-            pool.Enqueue(gem);
+            Queue<GameObject> queue = new Queue<GameObject>();
+            for (int i = 0; i < entry.initialSize; i++)
+            {
+                GameObject gem = CreateNewGem(entry.prefab);
+                queue.Enqueue(gem);
+            }
+            poolDict[entry.prefab] = queue;
         }
     }
 
-    GameObject CreateNewGem()
+    GameObject CreateNewGem(GameObject prefab)
     {
-        GameObject gem = Instantiate(gemPrefab, transform);
+        GameObject gem = Instantiate(prefab, transform);
         gem.SetActive(false);
+        instanceToPrefab[gem] = prefab; // ghi nhớ gem này thuộc prefab nào
         return gem;
     }
 
-    public GameObject GetGem(Vector3 position, Quaternion rotation)
+    public GameObject GetGem(GameObject prefab, Vector3 position, Quaternion rotation)
     {
+        if (!poolDict.ContainsKey(prefab))
+        {
+            poolDict[prefab] = new Queue<GameObject>();
+        }
+
+        Queue<GameObject> queue = poolDict[prefab];
         GameObject gem;
 
-        if(pool.Count > 0)
+        if (queue.Count > 0)
         {
-            gem = pool.Dequeue();
+            gem = queue.Dequeue();
         }
         else
         {
-            gem = CreateNewGem();
+            gem = CreateNewGem(prefab);
         }
 
         gem.transform.SetPositionAndRotation(position, rotation);
@@ -58,6 +77,17 @@ public class GemPool : MonoBehaviour
     {
         gem.SetActive(false);
         gem.transform.SetParent(transform);
-        pool.Enqueue(gem);
+
+        if (instanceToPrefab.TryGetValue(gem, out GameObject prefab))
+        {
+            if (!poolDict.ContainsKey(prefab))
+                poolDict[prefab] = new Queue<GameObject>();
+
+            poolDict[prefab].Enqueue(gem);
+        }
+        else
+        {
+            Debug.LogWarning($"GemPool: Không tìm thấy prefab gốc của {gem.name}, không thể trả về pool.");
+        }
     }
 }
