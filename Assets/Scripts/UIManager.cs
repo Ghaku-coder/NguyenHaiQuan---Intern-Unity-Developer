@@ -9,8 +9,8 @@ public class UIManager : MonoBehaviour
     public GameObject congratulation;
     public GameObject BlastRainbow;
 
-    private bool missionShown = false;
-    private bool congratulationShown = false;
+    public bool missionShown = false;
+    public bool congratulationShown = false;
 
     void Start()
     {
@@ -21,6 +21,11 @@ public class UIManager : MonoBehaviour
     }
 
     void Update()
+    {
+        State();
+    }
+
+    public void State()
     {
         gameManager.ShowPlayerScore();
 
@@ -37,7 +42,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    IEnumerator ShowMission()
+    public IEnumerator ShowMission()
     {
         panel.SetActive(true);
         mission.SetActive(true);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public UIManager uIManager;
     public List<Gem> gems = new List<Gem>();
     public Player player;
     public int score = 0;
@@ -20,7 +21,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
         ShowScore.text = string.Empty;
 
-        LoadScore(); // load điểm cũ ngay khi scene chạy
+        LoadScore();
+        DontDestroyOnLoad(gameObject);
     }
 
     public void RegisterGems(Gem g) => gems.Add(g);
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int value)
     {
         score += value;
-        SaveScore(); // lưu ngay mỗi lần ăn gem
+        SaveScore(); 
     }
 
     public void ShowPlayerScore()
@@ -52,6 +54,6 @@ public class GameManager : MonoBehaviour
     public void ResetScore()
     {
         score = 0;
-        SaveScore(); // ghi đè 0 xuống PlayerPrefs
+        SaveScore(); 
     }
 }

@@ -125,10 +125,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void PlayerAttacking()
+    public void PlayerAttacking(bool value)
     {
-        isAttacking = true;
-        // isAttacking = false;
+        isAttacking = value;
     }
 
     void CheckClimbable()

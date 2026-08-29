@@ -3,13 +3,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-/// <summary>
-/// Giữ chuột trái (Editor) hoặc chạm 1 ngón (Android) rồi kéo để xoay
-/// Cinemachine camera quanh nhân vật. Dùng API của package Input System mới
-/// (Mouse.current / Touchscreen.current) nên chạy được kể cả khi
-/// Project Settings > Player > Active Input Handling = "Input System Package (New)".
-/// Gán trực tiếp vào CinemachineOrbitalFollow, không cần Cinemachine Input Axis Controller.
-/// </summary>
 public class CameraOrbitDragControl : MonoBehaviour
 {
     [Header("Refs")]

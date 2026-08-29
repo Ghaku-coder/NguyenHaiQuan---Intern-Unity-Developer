@@ -44,7 +44,7 @@ public class GemPool : MonoBehaviour
     {
         GameObject gem = Instantiate(prefab, transform);
         gem.SetActive(false);
-        instanceToPrefab[gem] = prefab; // ghi nhớ gem này thuộc prefab nào
+        instanceToPrefab[gem] = prefab; 
         return gem;
     }
 

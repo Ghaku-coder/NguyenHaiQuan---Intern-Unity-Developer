@@ -27,17 +27,19 @@ public class Gem : MonoBehaviour
         isCollected = false;
         col.enabled = true;
         transform.localScale = Vector3.one;
-        if(rb != null)
+        if (rb != null)
         {
             rb.isKinematic = true;
         }
 
-        GameManager.Instance.RegisterGems(this);
+        if (GameManager.Instance != null)
+            GameManager.Instance.RegisterGems(this);
     }
 
     private void OnDisable()
     {
-        GameManager.Instance.UnRegisterGems(this);   
+        if (GameManager.Instance != null)
+            GameManager.Instance.UnRegisterGems(this);
     }
 
     void OnTriggerEnter(Collider other)
