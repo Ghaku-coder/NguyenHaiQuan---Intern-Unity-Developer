@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
             StartCoroutine(ShowMission());
         }
 
-        if (gameManager.score == 20 && !congratulationShown)
+        if (gameManager.score >= 20 && !congratulationShown)
         {
             congratulationShown = true;
             StartCoroutine(ShowCongratulation());

@@ -1619,6 +1619,7 @@ GameObject:
   - component: {fileID: 692659084}
   - component: {fileID: 692659083}
   - component: {fileID: 692659082}
+  - component: {fileID: 692659088}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -1633,7 +1634,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692659081}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89875cdc57c54474a8a74efd9b2a3b5d, type: 3}
   m_Name: 
@@ -1647,7 +1648,7 @@ MonoBehaviour:
       Owner: {fileID: 692659085}
       Enabled: 1
       Input:
-        InputAction: {fileID: -7129958397312382991, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+        InputAction: {fileID: 0}
         Gain: 100
         CancelDeltaTime: 0
       InputValue: 0
@@ -1658,7 +1659,7 @@ MonoBehaviour:
       Owner: {fileID: 692659085}
       Enabled: 1
       Input:
-        InputAction: {fileID: 1189734401540996702, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+        InputAction: {fileID: 0}
         Gain: 100
         CancelDeltaTime: 0
       InputValue: 0
@@ -1838,13 +1839,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692659081}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.086809315, y: 0.028419543, z: -0.0024774454, w: 0.9958164}
+  m_LocalRotation: {x: 0.086781666, y: 0.037937403, z: -0.0033071549, w: 0.99549925}
   m_LocalPosition: {x: 0, y: 1.5035291, z: -4.7685847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &692659088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692659081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a716e25582ae2f43950e90408e8104c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraControll
+  orbitalFollow: {fileID: 692659085}
+  sensitivityX: 3
+  sensitivityY: 3
+  invertY: 0
 --- !u!1 &704584535
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,7 +2850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08680932, y: 0.028419543, z: -0.0024774456, w: 0.9958164}
+  m_LocalRotation: {x: 0.08678167, y: 0.037937406, z: -0.003307156, w: 0.99549925}
   m_LocalPosition: {x: 0, y: 1.5035291, z: -4.7685847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
