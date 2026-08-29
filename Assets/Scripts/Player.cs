@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
 public class Player : MonoBehaviour
@@ -16,6 +18,12 @@ public class Player : MonoBehaviour
 
     [Header("Camera")]
     public Transform cameraPlayer;
+
+    [Header("trang thai hien tai")]
+    public bool isAttacking = false;
+    public bool isRunning = false;
+    public bool isClimbing = false;
+    public bool isJumping = false;
 
     public Animator animator;
     private Rigidbody rb;
@@ -53,9 +61,9 @@ public class Player : MonoBehaviour
 
         if (moveDir.sqrMagnitude > 0.01f)
         {
+            isRunning = true;
             animator.SetBool("isRunning", true);
 
-            // Chỉ xoay theo hướng di chuyển ngang, không dính trục Y
             Vector3 flatVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
             if (flatVelocity.sqrMagnitude > 0.01f)
             {
@@ -65,6 +73,7 @@ public class Player : MonoBehaviour
         else
         {
             animator.SetBool("isRunning", false);
+            isRunning = false;
         }
     }
 
@@ -82,8 +91,13 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isJumping",true);
         }
+        else if (!isGrounded && !isRunning)
+        {
+            animator.SetBool("isRunning", true);
+        }
         else
         {
+            animator.SetBool("isRunning", false);
             animator.SetBool("isJumping",false);
         }
     }
@@ -92,4 +106,15 @@ public class Player : MonoBehaviour
     {
         
     }
+
+    public void PlayerAttacking()
+    {
+        isAttacking = true;
+
+
+
+        // isAttacking = false;
+    }
+
+
 }
